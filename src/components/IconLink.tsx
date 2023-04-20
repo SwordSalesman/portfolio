@@ -7,23 +7,26 @@ interface IconLinkProps {
   icon: ReactNode;
   link?: string;
   copy?: string;
+  onClick?: Function;
   children?: ReactNode;
 }
 
 const IconLink = (props: IconLinkProps) => {
   var copyText = null;
 
-  const handleClick = async () => {
-    if (!props.copy) {
-      return;
+  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
+    e.stopPropagation();
+
+    if (props.onClick) {
+      props.onClick();
     }
 
-    if ("clipboard" in navigator) {
+    if (props.copy && "clipboard" in navigator) {
       toast(`Copied '${props.copy}'`, {
         duration: 1800,
         style: { color: "#ffffff", background: "#564b75" },
       });
-      await navigator.clipboard.writeText(props.copy);
+      navigator.clipboard.writeText(props.copy);
     }
   };
 

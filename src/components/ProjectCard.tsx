@@ -1,36 +1,74 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import styled from "styled-components";
 import IconLink from "./IconLink";
-import { HiExternalLink, HiChevronDown } from "react-icons/hi";
+import { HiExternalLink, HiChevronDown, HiChevronUp } from "react-icons/hi";
+import { useCollapse } from "react-collapsed";
 
 interface CardProps {
   title: string;
+  date?: string;
   link?: string;
   description: string;
   icons?: ReactNode;
   media?: ReactNode;
+  technologies?: ReactNode;
 }
 
 const ProjectCard = (props: CardProps) => {
+  const [isExpanded, setExpanded] = useState(false);
+  const { getCollapseProps, getToggleProps } = useCollapse({ isExpanded });
+
   return (
-    <ProjectCardWrapper>
-      <TextWrapper>
-        <Title>{props.title}</Title>
-        <Description>{props.description}</Description>
-      </TextWrapper>
-      <LinkWrapper>
-        {props.link && <IconLink link={props.link} icon={<HiExternalLink />} />}
-        {props.media && <IconLink icon={<HiChevronDown />} />}
-      </LinkWrapper>
-    </ProjectCardWrapper>
+    <div>
+      <ProjectCardBox
+        className="collapsible"
+        onClick={() => {
+          setExpanded(!isExpanded);
+        }}
+      >
+        <MainBox className="header" {...getToggleProps()}>
+          <TextBox>
+            <Title>
+              {<div>{props.title}</div>}
+              {props.date && <DateText>{props.date}</DateText>}
+            </Title>
+            <Description>{props.description}</Description>
+            {props.technologies && <TechChips>{props.technologies}</TechChips>}
+          </TextBox>
+          <LinkBox>
+            {props.link && (
+              <IconLink link={props.link} icon={<HiExternalLink />} />
+            )}
+            {props.media && (
+              <IconLink
+                icon={isExpanded ? <HiChevronUp /> : <HiChevronDown />}
+              />
+            )}
+          </LinkBox>
+        </MainBox>
+        {
+          <div {...getCollapseProps()}>
+            <MainBox className="content">
+              <div></div>
+              {props.media}
+              <div></div>
+            </MainBox>
+          </div>
+        }
+      </ProjectCardBox>
+    </div>
   );
 };
 
 export default ProjectCard;
 
-const ProjectCardWrapper = styled.div`
+// Styling
+
+const ProjectCardBox = styled.div`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.9);
   background: rgb(230, 219, 238);
   background: linear-gradient(
     90deg,
@@ -41,7 +79,7 @@ const ProjectCardWrapper = styled.div`
   margin: 0.5rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  padding: 0.2rem;
+  padding: 0.5rem;
   text-align: left;
   transition-duration: 0.2s;
 
@@ -49,14 +87,25 @@ const ProjectCardWrapper = styled.div`
 
   &:hover {
     transform: scale(1.02);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   }
 `;
 
 const Title = styled.div`
+  display: flex;
+  justify-content: space-between;
   font-size: 1.3em;
   line-height: 1em;
   margin-bottom: 0.5em;
   font-family: "Times New Roman", Times, serif;
+`;
+
+const DateText = styled.div`
+  color: rgba(183, 173, 204, 0.894);
+  font-size: 1rem;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  margin-left: 1rem;
 `;
 
 const Description = styled.div`
@@ -64,15 +113,28 @@ const Description = styled.div`
   color: rgb(255, 255, 255, 0.7);
 `;
 
-const TextWrapper = styled.div`
+const TextBox = styled.div`
   display: flex;
   padding: 0.3rem;
+  width: 100%;
   flex-direction: column;
   justify-content: left;
 `;
 
-const LinkWrapper = styled.div`
+const TechChips = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+`;
+
+const LinkBox = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+`;
+
+const MainBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 `;

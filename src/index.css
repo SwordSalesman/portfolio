@@ -7,11 +7,8 @@
   color: rgba(255, 255, 255, 0.9);
 
   background: rgb(45, 34, 59);
-  background: linear-gradient(
-    0deg,
-    rgb(30, 26, 43) 0%,
-    rgb(132, 122, 182) 100%
-  );
+  background: linear-gradient(0deg, rgb(30, 26, 43) 0%, rgb(132, 122, 182) 100%)
+    fixed;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -35,6 +32,13 @@ body {
   /* place-items: center; */
   min-width: 320px;
   min-height: 100vh;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 h1 {
