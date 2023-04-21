@@ -164,11 +164,15 @@ const GalleryImg = styled.img`
   max-height: 20rem;
   height: 100%;
 
-  box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.35);
 
-  &:hover {
-    transform: scale(1.3);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35);
+  @media (min-width: 600px) {
+    max-width: 500px;
+
+    &:hover {
+      transform: scale(1.3);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.65);
+    }
   }
 `;
 
