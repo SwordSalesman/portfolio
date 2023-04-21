@@ -42,6 +42,9 @@ const ProjectCard = (props: CardProps) => {
             {props.media && (
               <IconLink
                 icon={isExpanded ? <HiChevronUp /> : <HiChevronDown />}
+                onClick={() => {
+                  setExpanded(!isExpanded);
+                }}
               />
             )}
           </LinkBox>

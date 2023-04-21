@@ -48,11 +48,26 @@ const Projects = () => {
         description="Over the years I've been commissioned to paint digital portraits for people - usually with them dressed up in their fanciest kit. They are signed by the name of my artist alter ego 'Marius Piccolini', which is a bit of a long story which I love to talk about."
         link="https://www.flickr.com/gp/198135874@N04/o560tgwo2U"
         media={
-          <div>
-            <GalleryImg src={portrait_pierre} />
-            <GalleryImg src={portrait_proposal} />
-            <GalleryImg src={portrait_elizabet} />
-          </div>
+          <Gallery>
+            <GalleryImg
+              src={portrait_pierre}
+              onClick={(e: React.MouseEvent<HTMLElement>) => {
+                e.stopPropagation();
+              }}
+            />
+            <GalleryImg
+              src={portrait_proposal}
+              onClick={(e: React.MouseEvent<HTMLElement>) => {
+                e.stopPropagation();
+              }}
+            />
+            <GalleryImg
+              src={portrait_elizabet}
+              onClick={(e: React.MouseEvent<HTMLElement>) => {
+                e.stopPropagation();
+              }}
+            />
+          </Gallery>
         }
       />
       <ProjectCard
@@ -129,8 +144,15 @@ export default Projects;
 
 const ProjectImg = styled.img`
   margin-top: 1rem;
-  max-height: 20rem;
-  height: 100%;
+  max-width: 360px;
+
+  @media (min-width: 600px) {
+    max-width: 500px;
+  }
+`;
+
+const Gallery = styled.div`
+  text-align: center;
 `;
 
 const GalleryImg = styled.img`
@@ -151,7 +173,7 @@ const GalleryImg = styled.img`
 `;
 
 const TechIcon = styled.i`
-  font-size: 3rem;
+  font-size: 3em;
   margin-left: 0.6rem;
   margin-right: 0.6rem;
 `;
