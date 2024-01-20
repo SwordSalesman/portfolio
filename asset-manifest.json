@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.015075c8.css",
+    "main.js": "/static/js/main.7fda4af5.js",
+    "static/media/tome_demo.gif": "/static/media/tome_demo.097124476c09dc9bdf75.gif",
+    "static/media/character_demo.gif": "/static/media/character_demo.95f6bd2ac6836abc7ade.gif",
+    "static/media/rain_demo.gif": "/static/media/rain_demo.308728e9b2b0d0c4b41d.gif",
+    "static/media/dicetray_demo.gif": "/static/media/dicetray_demo.b0ebef930b135fa43d0c.gif",
+    "static/media/portrait-3.jpg": "/static/media/portrait-3.f1c511db028aa84b47bf.jpg",
+    "static/media/portrait-2.jpg": "/static/media/portrait-2.3b9ad60c1809d2706b12.jpg",
+    "static/media/name-logo-back.png": "/static/media/name-logo-back.ecabb2b7f4d216bd68a2.png",
+    "static/media/name-logo-front.png": "/static/media/name-logo-front.89ff95d8c07cecf305a2.png",
+    "static/media/portrait-1.jpg": "/static/media/portrait-1.66cb65f0c348a57d7dab.jpg",
+    "static/media/LukeCannonResume.pdf": "/static/media/LukeCannonResume.d5fe199e1b635ef0f8e8.pdf",
+    "index.html": "/index.html",
+    "main.015075c8.css.map": "/static/css/main.015075c8.css.map",
+    "main.7fda4af5.js.map": "/static/js/main.7fda4af5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.015075c8.css",
+    "static/js/main.7fda4af5.js"
+  ]
+}
