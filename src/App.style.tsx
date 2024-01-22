@@ -7,10 +7,7 @@ export const AppWrapper = styled.div`
 	justify-content: center;
 	align-items: center;
 
-	width: 100vw;
-	height: 100vh;
-
-	overflow: hidden;
+	overflow: scroll;
 
 	::-webkit-scrollbar {
 		display: none;

@@ -1,7 +1,10 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { useCollapse } from "react-collapsed";
 import styled from "styled-components";
-import { blurCard } from "../../theme/presets";
+import { blurCard, text } from "../../theme/presets";
+import TypewriterComponent from "typewriter-effect";
+
+const typewriterEffect = false;
 
 export function CollapseCard(props: {
 	title: string;
@@ -13,6 +16,12 @@ export function CollapseCard(props: {
 }) {
 	const { title, headkicker, description, date, link, children } = props;
 	const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
+	const [descKey, setDescKey] = useState(0);
+
+	useEffect(() => {
+		setDescKey((descKey + 1) % 2);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [isExpanded]);
 
 	return (
 		<CardWrapper {...getToggleProps()}>
@@ -40,7 +49,20 @@ export function CollapseCard(props: {
 			</CardHead>
 			<CardHeadkicker>{headkicker}</CardHeadkicker>
 			<CollapseContent {...getCollapseProps()}>
-				<CardDescription>{description}</CardDescription>
+				<CardDescription>
+					{typewriterEffect ? (
+						<TypewriterComponent
+							key={descKey}
+							onInit={(w) => {
+								w.changeDelay(10)
+									.typeString(description)
+									.start();
+							}}
+						/>
+					) : (
+						<p>{description}</p>
+					)}
+				</CardDescription>
 				<CardChildren>{children}</CardChildren>
 			</CollapseContent>
 		</CardWrapper>
@@ -82,10 +104,11 @@ const CardLink = styled.a`
 
 const CardHeadkicker = styled.p``;
 
-const CardDescription = styled.p`
+const CardDescription = styled.div`
 	margin: ${({ theme }) => theme.spacing.s}px 0 !important;
 	padding-top: ${({ theme }) => theme.spacing.s}px !important;
 	border-top: 1px solid ${({ theme }) => theme.colors.secondary[900]}60;
+	${text}
 `;
 
 const CardChildren = styled.div`

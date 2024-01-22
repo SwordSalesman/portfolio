@@ -10,6 +10,20 @@ export function AppBackground() {
 	);
 }
 
+const AppBackgroundWrapper = styled.div`
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	z-index: -10;
+	// This stops at 30% because the rolling grid is 70vh high
+	background: linear-gradient(
+		180deg,
+		${({ theme }) => theme.colors.background[500]} 0%,
+		${({ theme }) => theme.colors.background[200]} 25%,
+		${({ theme }) => theme.colors.background[100]} 30%
+	);
+`;
+
 const Noise = styled.div`
 	z-index: -4;
 	width: 100vw;
@@ -22,18 +36,4 @@ const Noise = styled.div`
 	bottom: auto;
 	left: 0%;
 	right: auto;
-`;
-
-const AppBackgroundWrapper = styled.div`
-	height: 100vh;
-	width: 100vw;
-	position: absolute;
-	z-index: -10;
-	// This stops at 30% because the rolling grid is 70vh high
-	background: linear-gradient(
-		180deg,
-		${({ theme }) => theme.colors.background[500]} 0%,
-		${({ theme }) => theme.colors.background[200]} 25%,
-		${({ theme }) => theme.colors.background[100]} 30%
-	);
 `;

@@ -16,3 +16,8 @@ export const blurCard = css`
 		box-shadow: 0px 0px 6px 1px ${theme.colors.background[500]};
 	}
 `;
+
+export const text = css`
+	color: ${theme.colors.secondary[900]};
+	text-shadow: 0px 0px 4px ${theme.colors.secondary[900]}99;
+`;

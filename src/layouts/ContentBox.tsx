@@ -8,6 +8,7 @@ export function ContentBox(props: { children?: ReactNode }) {
 }
 
 const ContentBoxWrapper = styled.div`
+	position: relative;
 	height: fit-content;
 	max-width: 900px;
 

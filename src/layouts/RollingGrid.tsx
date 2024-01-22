@@ -10,7 +10,7 @@ export function RollingGrid() {
 }
 
 const Grid = styled.div`
-	position: absolute;
+	position: fixed;
 	left: 0%;
 	top: auto;
 	right: 0%;
