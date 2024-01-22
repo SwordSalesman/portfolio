@@ -18,7 +18,6 @@ const ContentBoxWrapper = styled.div`
 	gap: 50px;
 
 	padding: ${({ theme }) => theme.spacing.s}px
-		${({ theme }) => theme.spacing.s}px 80px
 		${({ theme }) => theme.spacing.s}px;
 	@media screen and (min-width: ${({ theme }) => theme.mediaSize.sm}px) {
 		padding: ${({ theme }) => theme.spacing.m}px

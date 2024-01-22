@@ -25,7 +25,7 @@ const AppBackgroundWrapper = styled.div`
 `;
 
 const Noise = styled.div`
-	z-index: -4;
+	z-index: -5;
 	width: 100vw;
 	height: 100vh;
 	opacity: 0.3;

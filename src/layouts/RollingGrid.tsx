@@ -18,19 +18,17 @@ const Grid = styled.div`
 	overflow: hidden;
 	width: 100%;
 	height: 70vh;
-	z-index: -5;
 	-webkit-perspective: 52vh;
 	perspective: 52vh;
 	background: ${({ theme }) => theme.colors.background[100]};
 `;
 
 const GridMask = styled.div`
-	z-index: -4;
+	z-index: -9;
 	position: absolute;
-	left: 0%;
-	top: 0%;
-	right: 0%;
-	bottom: 0%;
+	width: 100%;
+	height: 100%;
+
 	background: linear-gradient(
 			180deg,
 			${({ theme }) => theme.colors.background[100]},
@@ -44,7 +42,7 @@ const GridMask = styled.div`
 `;
 
 const GridLines = styled.div`
-	z-index: -5;
+	z-index: -10;
 	position: absolute;
 	width: 100%;
 	height: 200%;

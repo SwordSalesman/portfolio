@@ -11,7 +11,11 @@ export function Footer() {
 
 const FooterWrapper = styled.div`
 	padding-top: 60px;
-	padding-bottom: 40px;
+	padding-bottom: 60px;
+
+	@media screen and (min-width: ${({ theme }) => theme.mediaSize.sm}px) {
+		padding-bottom: 20px;
+	}
 
 	p {
 		font-size: 12px;
