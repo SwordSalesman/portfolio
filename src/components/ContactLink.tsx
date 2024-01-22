@@ -1,5 +1,6 @@
 import { ReactNode, useRef, useState } from "react";
 import styled from "styled-components";
+import { blurCard } from "../theme/presets";
 
 export function ContactLink(props: {
 	label: string;
@@ -77,12 +78,9 @@ const CopiedAlert = styled.div<{ animation: string }>`
 	position: absolute;
 	z-index: 10;
 
-	background-color: ${({ theme }) => theme.colors.background[400]}99;
-	backdrop-filter: blur(${({ theme }) => theme.spacing.xxs}px);
-	box-shadow: 0px 0px 6px 1px ${({ theme }) => theme.colors.background[400]};
-	border: 1px solid ${({ theme }) => theme.colors.secondary[400]};
-	border-radius: ${({ theme }) => theme.spacing.xs}px;
-	color: ${({ theme }) => theme.colors.secondary[900]} !important;
+	${blurCard}
+
+	font-family: monospace;
 
 	left: 50%;
 	translate: -50%;
@@ -90,8 +88,6 @@ const CopiedAlert = styled.div<{ animation: string }>`
 	opacity: 0;
 	pointer-events: none;
 
-	border-radius: ${({ theme }) => theme.spacing.s}px;
-	padding: ${({ theme }) => theme.spacing.s}px;
 	animation: ${({ animation }) => animation};
 	@keyframes fadeAway {
 		0%,

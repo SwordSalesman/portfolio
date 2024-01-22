@@ -10,8 +10,8 @@ export function Footer() {
 }
 
 const FooterWrapper = styled.div`
-	padding-top: 120px;
-	padding-bottom: ${({ theme }) => theme.spacing.l}px;
+	padding-top: 60px;
+	padding-bottom: 40px;
 
 	p {
 		font-size: 12px;

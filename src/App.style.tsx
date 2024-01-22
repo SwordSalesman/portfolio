@@ -28,7 +28,7 @@ export const AppWrapper = styled.div`
 	i,
 	b,
 	a {
-		text-shadow: 0px 0px 4px ${({ theme }) => theme.colors.secondary[900]}90;
+		text-shadow: 0px 0px 4px ${({ theme }) => theme.colors.secondary[900]}99;
 		margin: 0;
 	}
 

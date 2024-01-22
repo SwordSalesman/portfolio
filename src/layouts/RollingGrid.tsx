@@ -31,7 +31,7 @@ const GridMask = styled.div`
 	top: 0%;
 	right: 0%;
 	bottom: 0%;
-	background-image: linear-gradient(
+	background: linear-gradient(
 			180deg,
 			${({ theme }) => theme.colors.background[100]},
 			transparent 30%

@@ -18,7 +18,6 @@ export function Title() {
 	return (
 		<TitleWrapper onMouseDown={(event) => handleClick(event)}>
 			<TitleBack
-				gyroscope
 				perspective={1500}
 				transitionSpeed={1000}
 				trackOnWindow
@@ -36,13 +35,15 @@ export function Title() {
 }
 
 const TitleWrapper = styled.div`
-	display: flex;
-	align-items: center;
 	cursor: pointer;
 	height: 25vw;
 	@media screen and (min-width: ${({ theme }) => theme.mediaSize.sm}px) {
 		height: 130px;
 	}
+
+	position: sticky;
+	top: 0px;
+	z-index: 100;
 `;
 
 const TitleBack = styled(Tilt)<{ animation: string }>`
@@ -52,7 +53,7 @@ const TitleBack = styled(Tilt)<{ animation: string }>`
 	background-repeat: no-repeat;
 	background-image: url(${titleBack});
 
-	margin: 20px auto;
+	margin: 0px auto;
 	width: 100%;
 	max-width: 520px;
 

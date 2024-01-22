@@ -5,9 +5,7 @@ import { theme } from "./theme/theme";
 import { ContentBox } from "./layouts/ContentBox";
 import { AppBackground } from "./layouts/AppBackground";
 import { Section } from "./layouts/Section";
-import { TitleWrapper } from "./components/Header/Header";
-import { Title } from "./components/Header/Title";
-import { Subtitle } from "./components/Header/Subtitle";
+import { Header } from "./components/Header/Header";
 import { Projects } from "./layouts/Sections/Projects";
 import { Links } from "./layouts/Sections/Links";
 import { Footer } from "./layouts/Footer";
@@ -18,10 +16,7 @@ function App() {
 			<AppBackground />
 			<AppWrapper>
 				<ContentBox>
-					<TitleWrapper>
-						<Title />
-						<Subtitle />
-					</TitleWrapper>
+					<Header />
 					<Section title={"> a little about me"}>
 						<p>
 							I'm a developer with a passion for design and making

@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { useCollapse } from "react-collapsed";
 import styled from "styled-components";
+import { blurCard } from "../../theme/presets";
 
 export function CollapseCard(props: {
 	title: string;
@@ -47,25 +48,11 @@ export function CollapseCard(props: {
 }
 
 const CardWrapper = styled.div`
-	background-color: ${({ theme }) => theme.colors.background[400]}40;
-	backdrop-filter: blur(${({ theme }) => theme.spacing.xxs}px);
-	/* box-shadow: inset 0px 0px 3px 0px
-			${({ theme }) => theme.colors.secondary[500]},
-		0px 0px 6px 0px ${({ theme }) => theme.colors.secondary[500]}; */
-	box-shadow: 0px 0px 6px 1px ${({ theme }) => theme.colors.background[400]};
-	border: 1px solid ${({ theme }) => theme.colors.secondary[400]};
-	border-radius: ${({ theme }) => theme.spacing.xs}px;
-	padding: ${({ theme }) => theme.spacing.s}px;
+	${blurCard}
+
 	width: 90%;
 	max-width: 600px;
 	cursor: pointer;
-	transition: 0.2s ease-out;
-
-	&:hover {
-		background-color: ${({ theme }) => theme.colors.background[500]}50;
-		box-shadow: 0px 0px 6px 1px
-			${({ theme }) => theme.colors.background[500]};
-	}
 
 	::selection {
 		color: ${({ theme }) => theme.colors.secondary[900]};
