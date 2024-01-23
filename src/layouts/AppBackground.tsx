@@ -11,8 +11,8 @@ export function AppBackground() {
 }
 
 const AppBackgroundWrapper = styled.div`
-	height: 100vh;
-	width: 100vw;
+	height: 100%;
+	width: 100%;
 	position: fixed;
 	z-index: -10;
 	// This stops at 30% because the rolling grid is 70vh high
@@ -26,12 +26,12 @@ const AppBackgroundWrapper = styled.div`
 
 const Noise = styled.div`
 	z-index: 1;
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+	height: 100%;
 	opacity: 0.3;
 	mix-blend-mode: soft-light;
 	background-image: url("https://steamuserimages-a.akamaihd.net/ugc/420313597233739498/4F1AF2ECEC1551326C604AE212055D6ED8D03FB4/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false");
-	position: fixed;
+	position: absolute;
 	background-size: 25vw;
 	top: 0%;
 	left: 0%;

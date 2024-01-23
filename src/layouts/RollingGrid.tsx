@@ -10,14 +10,11 @@ export function RollingGrid() {
 }
 
 const Grid = styled.div`
-	position: fixed;
-	left: 0%;
-	top: auto;
-	right: 0%;
-	bottom: 0%;
+	position: relative;
+	bottom: -30%;
 	overflow: hidden;
 	width: 100%;
-	height: 70vh;
+	height: 70%;
 	-webkit-perspective: 52vh;
 	perspective: 52vh;
 	background: ${({ theme }) => theme.colors.background[100]};
@@ -58,7 +55,7 @@ const GridLines = styled.div`
 			${({ theme }) => theme.colors.primary[500]} 1px,
 			transparent 0
 		);
-	background-size: 3vh 3vh;
+	background-size: 20px 20px;
 	background-repeat: repeat;
 	transform-origin: 100% 0 0;
 	animation: play 30s linear infinite, fadeIn 1.2s ease-out;
