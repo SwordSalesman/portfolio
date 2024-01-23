@@ -24,7 +24,7 @@ const Grid = styled.div`
 `;
 
 const GridMask = styled.div`
-	z-index: -9;
+	z-index: 0;
 	position: absolute;
 	width: 100%;
 	height: 100%;

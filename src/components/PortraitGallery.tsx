@@ -100,9 +100,11 @@ const PortraitWrapper = styled.div`
 		transition: 0.2s ease-out;
 	}
 
-	&:hover {
-		& img {
-			transform: scale(1.08);
+	@media screen and (min-width: ${({ theme }) => theme.mediaSize.sm}px) {
+		&:hover {
+			& img {
+				transform: scale(1.08);
+			}
 		}
 	}
 `;
