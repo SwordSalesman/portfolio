@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.90ec257a.css",
-    "main.js": "/static/js/main.9e65b825.js",
+    "main.css": "/static/css/main.6d47de52.css",
+    "main.js": "/static/js/main.ffd20944.js",
     "static/media/tome_demo.gif": "/static/media/tome_demo.097124476c09dc9bdf75.gif",
     "static/media/character_demo.gif": "/static/media/character_demo.95f6bd2ac6836abc7ade.gif",
+    "static/media/life_demo.gif": "/static/media/life_demo.9793f12a269005b1cec2.gif",
     "static/media/rain_demo.gif": "/static/media/rain_demo.308728e9b2b0d0c4b41d.gif",
     "static/media/dicetray_demo.gif": "/static/media/dicetray_demo.b0ebef930b135fa43d0c.gif",
     "static/media/portrait-3.jpg": "/static/media/portrait-3.f1c511db028aa84b47bf.jpg",
@@ -13,11 +14,11 @@
     "static/media/portrait-1.jpg": "/static/media/portrait-1.66cb65f0c348a57d7dab.jpg",
     "static/media/LukeCannonResume.pdf": "/static/media/LukeCannonResume.d5fe199e1b635ef0f8e8.pdf",
     "index.html": "/index.html",
-    "main.90ec257a.css.map": "/static/css/main.90ec257a.css.map",
-    "main.9e65b825.js.map": "/static/js/main.9e65b825.js.map"
+    "main.6d47de52.css.map": "/static/css/main.6d47de52.css.map",
+    "main.ffd20944.js.map": "/static/js/main.ffd20944.js.map"
   },
   "entrypoints": [
-    "static/css/main.90ec257a.css",
-    "static/js/main.9e65b825.js"
+    "static/css/main.6d47de52.css",
+    "static/js/main.ffd20944.js"
   ]
 }
