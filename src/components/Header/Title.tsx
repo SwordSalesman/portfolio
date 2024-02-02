@@ -40,9 +40,6 @@ const TitleWrapper = styled.div`
 	@media screen and (min-width: ${({ theme }) => theme.mediaSize.sm}px) {
 		height: 130px;
 	}
-
-	position: sticky;
-	top: 0px;
 	z-index: 100;
 `;
 

@@ -7,7 +7,26 @@ var portrait1 = require("../assets/portraits/portrait-1.jpg");
 var portrait2 = require("../assets/portraits/portrait-2.jpg");
 var portrait3 = require("../assets/portraits/portrait-3.jpg");
 
-const portraits = [portrait2, portrait1, portrait3];
+const portraits = [
+	{
+		portrait: portrait2,
+		title: "The Maiden of Hearts",
+		date: "May 2023",
+		description: "",
+	},
+	{
+		portrait: portrait1,
+		title: "Proposal",
+		date: "February 2023",
+		description: "",
+	},
+	{
+		portrait: portrait3,
+		title: "The Bard's Band",
+		date: "December 2023",
+		description: "",
+	},
+];
 
 export function PortraitGallery() {
 	const [showModal, setShowModal] = useState(false);
@@ -27,10 +46,13 @@ export function PortraitGallery() {
 	const renderedPortraits = portraits.map((p, i) => {
 		return (
 			<PortraitWrapper onClick={() => handleClick(i)}>
-				<img src={p} alt='A digitally painted portrait' />
+				<img src={p.portrait} alt='A digitally painted portrait' />
 			</PortraitWrapper>
 		);
 	});
+
+	const selected =
+		modalImageIndex !== null ? portraits[modalImageIndex] : null;
 
 	return (
 		<GalleryWrapper
@@ -43,22 +65,33 @@ export function PortraitGallery() {
 				onRequestClose={handleClose}
 				style={modalStyle}
 			>
-				<FullScreenPortrait>
-					{modalImageIndex !== null ? (
-						<img src={portraits[modalImageIndex]} alt='' />
-					) : null}
-				</FullScreenPortrait>
+				{selected ? (
+					<>
+						<FullScreenPortrait>
+							<img src={selected.portrait} alt='' />
+						</FullScreenPortrait>
+						<PortraitDescription onClick={handleClose}>
+							<h2>{selected.title}</h2>
+							<i>{selected.date}</i>
+							<p>{selected.description}</p>
+						</PortraitDescription>
+					</>
+				) : null}
 			</Modal>
 			<GalleryContent>{renderedPortraits}</GalleryContent>
 		</GalleryWrapper>
 	);
 }
 
+const PortraitDescription = styled.div`
+	max-width: 250px;
+`;
+
 const modalStyle = {
 	content: {
 		animation: "fadeIn 0.3s ease-out",
 		width: "fit-content",
-		maxWidth: "95%",
+		maxWidth: "90%",
 		top: "50%",
 		left: "50%",
 		right: "auto",
@@ -69,21 +102,25 @@ const modalStyle = {
 		border: "none",
 		borderRadius: "0",
 		background: "none",
+		display: "flex",
+		gap: "20px",
 	},
 	overlay: {
-		background: `${theme.colors.background[100]}c0`,
+		background: `${theme.colors.background[100]}e0`,
 		animation: "fadeIn 0.3s ease-out",
 	},
 };
 
 const GalleryWrapper = styled.div`
-	position: relative;
+	cursor: default;
 `;
 
 const GalleryContent = styled.div`
 	display: flex;
 	gap: 10px;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	overflow-x: scroll;
 
 	@media screen and (min-width: ${({ theme }) => theme.mediaSize.sm}px) {
@@ -95,15 +132,17 @@ const GalleryContent = styled.div`
 const PortraitWrapper = styled.div`
 	overflow: hidden;
 	cursor: pointer;
+	border-radius: ${theme.spacing.xxs}px;
 
 	img {
 		transition: 0.2s ease-out;
+		width: 100%;
 	}
 
 	@media screen and (min-width: ${({ theme }) => theme.mediaSize.sm}px) {
 		&:hover {
 			& img {
-				transform: scale(1.08);
+				transform: scale(1.07);
 			}
 		}
 	}

@@ -113,11 +113,9 @@ const CardDescription = styled.div`
 
 const CardChildren = styled.div`
 	position: relative;
+	/* border-radius: ${({ theme }) => theme.spacing.xs}px; */
+	overflow-x: hidden;
 	width: 100%;
-	border-radius: ${({ theme }) => theme.spacing.xs}px;
-	overflow: hidden;
-
-	img {
-		width: 100%;
-	}
+	display: flex;
+	justify-content: center;
 `;

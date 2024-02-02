@@ -11,8 +11,8 @@ export function AppBackground() {
 }
 
 const AppBackgroundWrapper = styled.div`
-	height: 100%;
-	width: 100%;
+	height: 100svh;
+	width: 100svw;
 	position: fixed;
 	z-index: -10;
 	// This stops at 30% because the rolling grid is 70vh high
@@ -35,4 +35,8 @@ const Noise = styled.div`
 	background-size: 25vw;
 	top: 0%;
 	left: 0%;
+
+	/* @media screen and (max-width: ${({ theme }) => theme.mediaSize.sm}px) {
+		display: none;
+	} */
 `;

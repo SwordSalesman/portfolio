@@ -3,7 +3,8 @@ import styled from "styled-components";
 export function RollingGrid() {
 	return (
 		<Grid>
-			<GridMask />
+			<GridTopMask />
+			<GridRoundMask />
 			<GridLines />
 		</Grid>
 	);
@@ -18,24 +19,36 @@ const Grid = styled.div`
 	-webkit-perspective: 52vh;
 	perspective: 52vh;
 	background: ${({ theme }) => theme.colors.background[100]};
+
+	/* @media screen and (max-width: ${({ theme }) => theme.mediaSize.sm}px) {
+		display: none;
+	} */
 `;
 
-const GridMask = styled.div`
+const GridTopMask = styled.div`
 	z-index: 0;
 	position: absolute;
 	width: 100%;
 	height: 100%;
 
 	background: linear-gradient(
-			180deg,
-			${({ theme }) => theme.colors.background[100]},
-			transparent 30%
-		),
-		radial-gradient(
-			circle farthest-corner at 50% 0%,
-			transparent 60%,
-			${({ theme }) => theme.colors.background[100]} 90%
-		);
+		180deg,
+		${({ theme }) => theme.colors.background[100]},
+		transparent 30%
+	);
+`;
+
+const GridRoundMask = styled.div`
+	z-index: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+
+	background: radial-gradient(
+		circle farthest-corner at 50% 0%,
+		transparent 60%,
+		${({ theme }) => theme.colors.background[100]} 90%
+	);
 `;
 
 const GridLines = styled.div`

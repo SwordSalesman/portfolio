@@ -41,7 +41,11 @@ const StyledTypewriter = styled.div`
 
 	animation: hideTypewriterAtStart 0.9s;
 
-	height: 1em;
+	z-index: 1;
+	position: sticky;
+	top: 0;
+
+	/* height: 1em; */
 
 	@keyframes hideTypewriterAtStart {
 		0%,

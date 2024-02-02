@@ -1,5 +1,5 @@
 import React from "react";
-import { AppWrapper } from "./App.style";
+import { AppWrapper, SpacerBottom, SpacerTop } from "./App.style";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./theme/theme";
 import { ContentBox } from "./layouts/ContentBox";
@@ -16,7 +16,9 @@ function App() {
 			<AppBackground />
 			<AppWrapper>
 				<ContentBox>
+					<SpacerTop />
 					<Header />
+					<SpacerBottom />
 					<Section title={"> a little about me"}>
 						<p>
 							I'm a developer with a passion for design and making

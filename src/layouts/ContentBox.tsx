@@ -14,7 +14,7 @@ const ContentBoxWrapper = styled.div`
 
 	display: flex;
 	flex-direction: column;
-	overflow-x: hidden;
+	overflow-x: clip;
 	gap: 50px;
 
 	padding: ${({ theme }) => theme.spacing.s}px
@@ -28,6 +28,7 @@ const ContentBoxWrapper = styled.div`
 			${({ theme }) => theme.spacing.xxl}px;
 		width: 85%;
 	}
+	padding-top: 0svh !important;
 `;
 
 const ContentFadeBottom = styled.div`

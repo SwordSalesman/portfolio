@@ -3,6 +3,7 @@ import { CollapseCard } from "../../components/Card/CollapseCard";
 import { PortraitGallery } from "../../components/PortraitGallery";
 var characterDemo = require("../../assets/demos/character_demo.gif");
 var tomeDemo = require("../../assets/demos/tome_demo.gif");
+var lifeDemo = require("../../assets/demos/life_demo.gif");
 var rainDemo = require("../../assets/demos/rain_demo.gif");
 var diceDemo = require("../../assets/demos/dicetray_demo.gif");
 
@@ -16,7 +17,7 @@ export function Projects() {
 				headkicker={`A guided character creator for Perth's biggest LARP.`}
 				description={`This project was right up my alley. I worked closely with the organisers of the game to understand the requirements of the form, and I had creative freedom to make it however I wanted. The community has loved the app and has made character creation and submission a breeze. I continue to provide support and updates for this project, including recently adding an approvals window for admins to check and approve submitted characters.`}
 			>
-				<img
+				<ProjectImage
 					src={characterDemo}
 					alt='A screen recording of the Concord Character Creator app'
 				/>
@@ -37,7 +38,21 @@ export function Projects() {
 				headkicker={`A tool to lookup and save D&D spells.`}
 				description={`This was a skill test for a previous role and was my introduction to React. It's a little rough around the edges but was great fun to build.`}
 			>
-				<img src={tomeDemo} alt='A screen recording of the Tome app' />
+				<ProjectImage
+					src={tomeDemo}
+					alt='A screen recording of the Tome app'
+				/>
+			</CollapseCard>
+			<CollapseCard
+				title='Life'
+				date='2022'
+				headkicker={`An interactive Game of Life runner.`}
+				description={`I coded this in Python while I was on a stint of night shifts at an industrial plant with nothing to do - it was the only thing that kept me awake.`}
+			>
+				<ProjectImage
+					src={lifeDemo}
+					alt='A screen recording of the Life script'
+				/>
 			</CollapseCard>
 			<CollapseCard
 				title='Rain'
@@ -45,7 +60,7 @@ export function Projects() {
 				headkicker={`A soothing rain simulation for your terminal.`}
 				description={`This was the result of a rainy afternoon while I should have been studying. This does't showcase much, but I really like this little python script.`}
 			>
-				<img
+				<ProjectImage
 					src={rainDemo}
 					alt='A screen recording of the Rain script'
 				/>
@@ -56,7 +71,10 @@ export function Projects() {
 				headkicker={`An Electron app for easy dice rolling.`}
 				description={`This was my first HTML project while I was at uni. The goal was to make a desktop app which made rolling handfulls of dice quick and easy. I can't help but gawk at the UI design now, but it's still nice to see where I started.`}
 			>
-				<img src={diceDemo} alt='A screen recording of the Dice app' />
+				<ProjectImage
+					src={diceDemo}
+					alt='A screen recording of the Dice app'
+				/>
 			</CollapseCard>
 		</ProjectsWrapper>
 	);
@@ -70,4 +88,10 @@ const ProjectsWrapper = styled.div`
 	flex-direction: column;
 	gap: ${({ theme }) => theme.spacing.m}px;
 	margin: ${({ theme }) => theme.spacing.m}px 0%;
+`;
+
+const ProjectImage = styled.img`
+	max-height: 300px;
+	max-width: 100%;
+	border-radius: 10px;
 `;

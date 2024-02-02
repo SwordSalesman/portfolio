@@ -10,7 +10,7 @@ export const AppWrapper = styled.div`
 	::-webkit-scrollbar {
 		display: none;
 	}
-	-ms-overflow-style: none;
+	/* -ms-overflow-style: none; */
 	scrollbar-width: none;
 
 	color: ${({ theme }) => theme.colors.secondary[900]};
@@ -86,4 +86,12 @@ export const AppWrapper = styled.div`
 			opacity: 1;
 		}
 	}
+`;
+
+export const SpacerTop = styled.div`
+	height: 50px;
+`;
+
+export const SpacerBottom = styled.div`
+	height: 20px;
 `;
