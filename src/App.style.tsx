@@ -13,7 +13,11 @@ export const AppWrapper = styled.div`
 	/* -ms-overflow-style: none; */
 	scrollbar-width: none;
 
-	color: ${({ theme }) => theme.colors.secondary[900]};
+	/* background: linear-gradient(
+		0deg,
+		${({ theme }) => theme.colors.backgroundSecondary} 20%,
+		transparent
+	); */
 
 	h1,
 	h2,
@@ -23,48 +27,21 @@ export const AppWrapper = styled.div`
 	i,
 	b,
 	a {
-		text-shadow: 0px 0px 4px ${({ theme }) => theme.colors.secondary[900]}99;
+		/* text-shadow: 0px 0px 4px ${({ theme }) => theme.colors.nav}99; */
 		margin: 0;
 	}
 
 	a {
-		color: ${({ theme }) => theme.colors.secondary[700]};
-
+		transition: 0.2s;
+		color: ${({ theme }) => theme.colors.link};
 		&:hover {
-			color: ${({ theme }) => theme.colors.secondary[900]};
+			color: ${({ theme }) => theme.colors.linkHover};
 		}
 	}
 
 	::selection {
-		color: ${({ theme }) => theme.colors.secondary[900]};
-		background: ${({ theme }) => theme.colors.primary[500]};
-	}
-
-	@keyframes downExpandFadeIn {
-		0% {
-			transform: scaleY(0.05) opacity 0;
-		}
-		/* 60% {
-			transform: scaleY(0.8) opacity 0.8;
-		} */
-		100% {
-			transform: scaleY(1) opacity 1;
-		}
-	}
-
-	@keyframes monitorExpandIn {
-		0% {
-			transform: scaleY(0.05) scaleX(0);
-		}
-		20% {
-			transform: scaleY(0.05) scaleX(0);
-		}
-		60% {
-			transform: scaleY(0.05) scaleX(1.2);
-		}
-		100% {
-			transform: scaleY(1) scaleX(1);
-		}
+		/* color: white; */
+		background: ${({ theme }) => theme.colors.highlight};
 	}
 
 	@keyframes fadeIn {
@@ -81,7 +58,6 @@ export const AppWrapper = styled.div`
 		40% {
 			opacity: 0;
 		}
-
 		100% {
 			opacity: 1;
 		}
@@ -94,4 +70,40 @@ export const SpacerTop = styled.div`
 
 export const SpacerBottom = styled.div`
 	height: 20px;
+`;
+
+export const ContentBox = styled.div`
+	position: relative;
+	height: fit-content;
+	display: flex;
+	flex-direction: column;
+	overflow-x: clip;
+	gap: 50px;
+
+	padding: 14px;
+	padding-top: 40px;
+
+	@media screen and (min-width: ${({ theme }) => theme.mediaSize.sm}px) {
+		max-width: 600px;
+		padding: 24px;
+		padding-top: 40px;
+	}
+`;
+
+export const FadeInWrapper = styled.div`
+	animation: delayedFadeIn 1.6s ease-out;
+`;
+
+export const HeaderBackground = styled.div`
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 160px;
+	width: 100%;
+	z-index: -1;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		${({ theme }) => theme.colors.backgroundSecondary}
+	);
 `;

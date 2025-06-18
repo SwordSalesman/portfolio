@@ -1,44 +1,21 @@
 import styled from "styled-components";
-import { Title } from "./Title";
 import { Subtitle } from "./Subtitle";
 
 export function Header() {
 	return (
-		<>
-			{/* <HeaderBackground /> */}
-			<HeaderWrapper>
-				<Title />
-				<Subtitle />
-			</HeaderWrapper>
-		</>
+		<HeaderWrapper>
+			<h1>Hi, I'm Luke</h1>
+			<Subtitle />
+		</HeaderWrapper>
 	);
 }
 
-export const HeaderBackground = styled.div`
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 200px;
-	width: 100%;
-	z-index: 10;
-	background: linear-gradient(
-		180deg,
-		${({ theme }) => theme.colors.background[500]} 20%,
-		transparent
-	);
-	/* border: 1px red solid; */
-`;
-
 export const HeaderWrapper = styled.div`
 	z-index: 20;
-	/* display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-direction: column;
-	position: relative; */
+	margin-bottom: 20px;
 
-	/* padding: 100px 0 70px 0; */
+	animation: fadeIn 0.6s ease-in-out;
+
 	@media screen and (min-width: ${({ theme }) => theme.mediaSize.sm}px) {
-		/* padding: 100px 0; */
 	}
 `;

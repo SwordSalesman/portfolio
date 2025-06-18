@@ -5,34 +5,18 @@ import "styled-components";
 declare module "styled-components" {
 	export interface DefaultTheme {
 		colors: {
-			primary: {
-				400: string;
-				500: string;
-				600: string;
-				700: string;
-				800: string;
-				900: string;
-			};
-			secondary: {
-				400: string;
-				500: string;
-				600: string;
-				700: string;
-				800: string;
-				900: string;
-			};
-			highlight: {
-				300: string;
-				400: string;
-				500: string;
-			};
-			background: {
-				100: string;
-				200: string;
-				300: string;
-				400: string;
-				500: string;
-			};
+			body: string;
+			header: string;
+			textColor: string;
+			nav: string;
+			background: string;
+			backgroundSecondary: string;
+			backgroundTertiary: string;
+			primary: string;
+			secondary: string;
+			link: string;
+			linkHover: string;
+			highlight: string;
 		};
 		spacing: {
 			xxs: number;
@@ -51,38 +35,7 @@ declare module "styled-components" {
 	}
 }
 
-// eslint-disable-next-line import/no-anonymous-default-export
-export const theme: DefaultTheme = {
-	colors: {
-		primary: {
-			400: "#901456",
-			500: "#c1115a",
-			600: "#e13a6a",
-			700: "#e46a87",
-			800: "#f4b4cb",
-			900: "#ffe7ef",
-		},
-		secondary: {
-			400: "#084f64",
-			500: "#037494",
-			600: "#17adad",
-			700: "#53ebe4",
-			800: "#7ef2ec",
-			900: "#dbfffd",
-		},
-		highlight: {
-			300: "#45004f",
-			400: "#710681",
-			500: "#a327bb",
-		},
-		background: {
-			100: "#0b0514",
-			200: "#10061f",
-			300: "#08173d",
-			400: "#03274c",
-			500: "#083664",
-		},
-	},
+export const baseTheme = {
 	spacing: {
 		xxs: 4,
 		xs: 8,
@@ -97,4 +50,23 @@ export const theme: DefaultTheme = {
 		md: 768,
 		lg: 1024,
 	},
+};
+
+// eslint-disable-next-line import/no-anonymous-default-export
+export const theme: DefaultTheme = {
+	colors: {
+		body: "#000000",
+		header: "#000000",
+		textColor: "#000000",
+		nav: "#42559a",
+		background: "#f4f2f7",
+		backgroundSecondary: "#e3def1",
+		backgroundTertiary: "#ece9f4",
+		primary: "#8b73cf",
+		secondary: "#524674",
+		link: "#6f57d1",
+		linkHover: "#a994ff",
+		highlight: "#d6c9f7b1",
+	},
+	...baseTheme,
 };

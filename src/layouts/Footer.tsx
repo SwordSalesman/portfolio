@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
 export function Footer() {
+	const currentYear = new Date().getFullYear();
+
 	return (
 		<FooterWrapper>
 			{/* <p>What do people put down here anyway?</p> */}
-			<p>© 2024 this site definitely isn't copyrighted</p>
+			<p>© {currentYear} this site definitely isn't copyrighted</p>
 		</FooterWrapper>
 	);
 }
@@ -20,8 +22,6 @@ const FooterWrapper = styled.div`
 	p {
 		font-size: 12px;
 		text-align: center;
-		color: ${({ theme }) => theme.colors.secondary[700]};
-		text-shadow: none !important;
-		opacity: 0.6;
+		color: ${({ theme }) => theme.colors.primary};
 	}
 `;

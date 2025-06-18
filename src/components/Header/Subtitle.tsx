@@ -6,19 +6,23 @@ export function Subtitle() {
 		<StyledTypewriter>
 			<TypewriterComponent
 				onInit={(w) => {
-					w.changeDelay(60)
+					w.changeDelay(40)
+
 						.changeDeleteSpeed(20)
 						.pauseFor(1000)
-						.typeString(`Hey, I'm Luke`)
-						.pauseFor(400)
-						.typeString(` - I'm a software engineer`)
+
+						.typeString(`I'm a software engineer`)
 						.pauseFor(1200)
-						.deleteChars(17)
+						.deleteChars(18)
 						.pauseFor(300)
-						.typeString(`front end developer`)
-						.pauseFor(700)
-						.deleteChars(20)
+
+						.typeString(` frontend `)
 						.pauseFor(600)
+						.typeString(`guy`)
+						.pauseFor(1000)
+						.deleteChars(13)
+
+						.pauseFor(800)
 						.typeString(`n enthusiast`)
 						.pauseFor(500)
 						.changeDelay(200)
@@ -27,7 +31,8 @@ export function Subtitle() {
 						.pauseFor(700)
 						.deleteChars(20)
 						.pauseFor(200)
-						.typeString(`this is my portfolio`)
+
+						.typeString(`This is my portfolio`)
 						.start();
 				}}
 			/>
@@ -36,8 +41,7 @@ export function Subtitle() {
 }
 
 const StyledTypewriter = styled.div`
-	text-shadow: 0px 0px 5px ${({ theme }) => theme.colors.secondary[900]}90;
-	text-align: center;
+	/* text-align: center; */
 
 	animation: hideTypewriterAtStart 0.9s;
 
@@ -45,6 +49,10 @@ const StyledTypewriter = styled.div`
 	position: sticky;
 	top: 0;
 
+	font-family: monospace;
+	font-size: 0.8rem;
+
+	color: ${({ theme }) => theme.colors.secondary};
 	/* height: 1em; */
 
 	@keyframes hideTypewriterAtStart {

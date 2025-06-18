@@ -106,8 +106,9 @@ const modalStyle = {
 		gap: "20px",
 	},
 	overlay: {
-		background: `${theme.colors.background[100]}e0`,
 		animation: "fadeIn 0.3s ease-out",
+		backdropFilter: "blur(2px)",
+		zIndex: 100,
 	},
 };
 
@@ -121,7 +122,6 @@ const GalleryContent = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	overflow-x: scroll;
 
 	@media screen and (min-width: ${({ theme }) => theme.mediaSize.sm}px) {
 		flex-direction: row;
@@ -132,7 +132,7 @@ const GalleryContent = styled.div`
 const PortraitWrapper = styled.div`
 	overflow: hidden;
 	cursor: pointer;
-	border-radius: ${theme.spacing.xxs}px;
+	border-radius: 6px;
 
 	img {
 		transition: 0.2s ease-out;

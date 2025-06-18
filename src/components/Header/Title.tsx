@@ -1,41 +1,27 @@
 import styled from "styled-components";
 import Tilt from "react-parallax-tilt";
-import { useState } from "react";
 var titleFront = require("../../assets/name-logo-front.png");
 var titleBack = require("../../assets/name-logo-back.png");
 
 export function Title() {
-	const [key, setKey] = useState(0);
-	const [animation, setAnimation] = useState(
-		"expandInTitle 1s cubic-bezier(0, 0.81, 0.54, 1)"
-	);
-
-	function handleClick(event: React.MouseEvent<HTMLDivElement, MouseEvent>) {
-		setKey((key + 1) % 2);
-		setAnimation("jiggleTitle 0.3s ease-out;");
-	}
-
 	return (
-		<TitleWrapper onMouseDown={(event) => handleClick(event)}>
+		<TitleWrapper>
 			<TitleBack
 				perspective={1500}
 				transitionSpeed={1000}
 				trackOnWindow
 				tiltReverse
-				tiltMaxAngleX={15}
-				tiltMaxAngleY={15}
-				animation={animation}
-				key={key}
+				// tiltMaxAngleX={15}
+				// tiltMaxAngleY={15}
+				animation={"expandInTitle 1s cubic-bezier(0, 0.81, 0.54, 1)"}
 			>
 				<TitleFront src={titleFront} />
-				{/* <TitleLogo src={titleBack} /> */}
 			</TitleBack>
 		</TitleWrapper>
 	);
 }
 
 const TitleWrapper = styled.div`
-	cursor: pointer;
 	height: 25vw;
 	@media screen and (min-width: ${({ theme }) => theme.mediaSize.sm}px) {
 		height: 130px;
@@ -74,18 +60,6 @@ const TitleBack = styled(Tilt)<{ animation: string }>`
 		}
 		100% {
 			transform: scaleY(1) scaleX(1) perspective(1000px);
-		}
-	}
-
-	@keyframes jiggleTitle {
-		0% {
-			width: 100%;
-		}
-		20% {
-			width: 90%;
-		}
-		100% {
-			width: 100%;
 		}
 	}
 `;

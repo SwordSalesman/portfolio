@@ -19,12 +19,6 @@ const StyledDivider = styled.div`
 	height: 3px;
 	border-radius: 2px;
 	filter: brightness(1.5);
-	background: linear-gradient(
-		90deg,
-		${({ theme }) => theme.colors.primary[600]} 0%,
-		${({ theme }) => theme.colors.primary[500]} 30%,
-		${({ theme }) => theme.colors.secondary[600]} 90%
-	);
 `;
 
 const DividerGlow = styled(StyledDivider)`

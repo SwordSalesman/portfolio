@@ -1,8 +1,9 @@
 import { ReactNode, useEffect, useState } from "react";
 import { useCollapse } from "react-collapsed";
 import styled from "styled-components";
-import { blurCard, text } from "../../theme/presets";
+import { text } from "../../theme/presets";
 import TypewriterComponent from "typewriter-effect";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const typewriterEffect = false;
 
@@ -27,7 +28,7 @@ export function CollapseCard(props: {
 		<CardWrapper {...getToggleProps()}>
 			<CardHead>
 				<div>
-					<h3>{title}</h3>
+					<h3 style={{ textTransform: "uppercase" }}>{title}</h3>
 					<CardDate>{date}</CardDate>
 				</div>
 				{link ? (
@@ -40,7 +41,7 @@ export function CollapseCard(props: {
 								e.stopPropagation();
 							}}
 						>
-							link
+							<FaExternalLinkAlt />
 						</CardLink>
 					</div>
 				) : (
@@ -70,16 +71,20 @@ export function CollapseCard(props: {
 }
 
 const CardWrapper = styled.div`
-	${blurCard}
+	background-color: ${({ theme }) => theme.colors.backgroundTertiary};
+	border-radius: ${({ theme }) => theme.spacing.xs}px;
+	padding: ${({ theme }) => theme.spacing.s}px;
 
-	width: 90%;
+	transition: 0.2s ease-out;
+	&:hover {
+		background-color: ${({ theme }) => theme.colors.backgroundSecondary};
+	}
+
+	position: relative;
+	overflow: hidden;
+	width: 95%;
 	max-width: 600px;
 	cursor: pointer;
-
-	::selection {
-		color: ${({ theme }) => theme.colors.secondary[900]};
-		background: ${({ theme }) => theme.colors.secondary[500]};
-	}
 `;
 
 const CollapseContent = styled.div``;
@@ -88,32 +93,34 @@ const CardHead = styled.div`
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
-	margin-bottom: ${({ theme }) => theme.spacing.xs}px;
+	/* margin-bottom: ${({ theme }) => theme.spacing.xs}px; */
 `;
 
-const CardDate = styled.i`
-	color: ${({ theme }) => theme.colors.primary[600]};
-	/* text-shadow: 0px 0px 4px ${({ theme }) =>
-		theme.colors.primary[900]}90; */
+const CardDate = styled.p`
+	color: ${({ theme }) => theme.colors.primary};
 	text-shadow: none !important;
+	font-family: "mono", monospace;
 `;
 
 const CardLink = styled.a`
 	padding: ${({ theme }) => theme.spacing.xs}px;
 `;
 
-const CardHeadkicker = styled.p``;
+const CardHeadkicker = styled.p`
+	opacity: 0.8;
+	font-style: italic;
+	/* font-size: 0.9rem; */
+`;
 
 const CardDescription = styled.div`
 	margin: ${({ theme }) => theme.spacing.s}px 0 !important;
-	padding-top: ${({ theme }) => theme.spacing.s}px !important;
-	border-top: 1px solid ${({ theme }) => theme.colors.secondary[900]}60;
+	padding: 10px 0 !important;
+	/* border-top: 1px solid ${({ theme }) => theme.colors.primary}60; */
 	${text}
 `;
 
 const CardChildren = styled.div`
 	position: relative;
-	/* border-radius: ${({ theme }) => theme.spacing.xs}px; */
 	overflow-x: hidden;
 	width: 100%;
 	display: flex;

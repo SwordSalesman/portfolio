@@ -2,20 +2,16 @@ import styled from "styled-components";
 import { CollapseCard } from "../../components/Card/CollapseCard";
 import { PortraitGallery } from "../../components/PortraitGallery";
 var characterDemo = require("../../assets/demos/character_demo.gif");
-var tomeDemo = require("../../assets/demos/tome_demo.gif");
-var lifeDemo = require("../../assets/demos/life_demo.gif");
-var rainDemo = require("../../assets/demos/rain_demo.gif");
-var diceDemo = require("../../assets/demos/dicetray_demo.gif");
 
 export function Projects() {
 	return (
 		<ProjectsWrapper>
 			<CollapseCard
 				title='Concord Character Creator'
-				date='2023-24'
+				date='2023-25'
 				link='https://charactercreator.concordlarp.com/'
 				headkicker={`A guided character creator for Perth's biggest LARP.`}
-				description={`This project was right up my alley. I worked closely with the organisers of the game to understand the requirements of the form, and I had creative freedom to make it however I wanted. The community has loved the app and has made character creation and submission a breeze. I continue to provide support and updates for this project, including recently adding an approvals window for admins to check and approve submitted characters.`}
+				description={`An interactive character submission portal for Concord LARP. I continue to work closely with the organisers of the game to understand the requirements of the form, and I had creative freedom to make it however I wanted. The community has loved the app and has made character creation and submission a breeze. I continue to provide support and updates for this project, including recently adding an approvals window for admins to check and approve submitted characters.`}
 			>
 				<ProjectImage
 					src={characterDemo}
@@ -24,14 +20,14 @@ export function Projects() {
 			</CollapseCard>
 			<CollapseCard
 				title='Portraits'
-				date='2022-24'
+				date='2022-25'
 				link='https://www.flickr.com/gp/198135874@N04/o560tgwo2U'
 				headkicker={`Digitally painted portraits of local eccentrics.`}
-				description={`These are commissioned portraits for people who love to dress up in fancy period kit. They are signed by my fictional alter ego, Marius Piccolini.`}
+				description={`Commissioned digital portraits for people who love to dress up in fancy period kit. They are signed by my fictional alter ego, Marius Piccolini - it's a long story.`}
 			>
 				<PortraitGallery />
 			</CollapseCard>
-			<CollapseCard
+			{/* <CollapseCard
 				title='Tome'
 				date='2023'
 				link='https://magictome-6aeb7.web.app/'
@@ -75,7 +71,7 @@ export function Projects() {
 					src={diceDemo}
 					alt='A screen recording of the Dice app'
 				/>
-			</CollapseCard>
+			</CollapseCard> */}
 		</ProjectsWrapper>
 	);
 }
@@ -86,8 +82,8 @@ const ProjectsWrapper = styled.div`
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	gap: ${({ theme }) => theme.spacing.m}px;
-	margin: ${({ theme }) => theme.spacing.m}px 0%;
+	gap: 16px;
+	padding: 12px 0%;
 `;
 
 const ProjectImage = styled.img`

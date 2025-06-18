@@ -18,7 +18,6 @@ const Grid = styled.div`
 	height: 70%;
 	-webkit-perspective: 52vh;
 	perspective: 52vh;
-	background: ${({ theme }) => theme.colors.background[100]};
 
 	/* @media screen and (max-width: ${({ theme }) => theme.mediaSize.sm}px) {
 		display: none;
@@ -30,12 +29,6 @@ const GridTopMask = styled.div`
 	position: absolute;
 	width: 100%;
 	height: 100%;
-
-	background: linear-gradient(
-		180deg,
-		${({ theme }) => theme.colors.background[100]},
-		transparent 30%
-	);
 `;
 
 const GridRoundMask = styled.div`
@@ -43,12 +36,6 @@ const GridRoundMask = styled.div`
 	position: absolute;
 	width: 100%;
 	height: 100%;
-
-	background: radial-gradient(
-		circle farthest-corner at 50% 0%,
-		transparent 60%,
-		${({ theme }) => theme.colors.background[100]} 90%
-	);
 `;
 
 const GridLines = styled.div`
@@ -56,18 +43,6 @@ const GridLines = styled.div`
 	position: absolute;
 	width: 100%;
 	height: 200%;
-
-	/* rgba(111, 207, 151, 0.4) */
-	background: linear-gradient(
-			to right,
-			${({ theme }) => theme.colors.primary[500]} 1px,
-			transparent 0
-		),
-		linear-gradient(
-			to bottom,
-			${({ theme }) => theme.colors.primary[500]} 1px,
-			transparent 0
-		);
 	background-size: 20px 20px;
 	background-repeat: repeat;
 	transform-origin: 100% 0 0;
