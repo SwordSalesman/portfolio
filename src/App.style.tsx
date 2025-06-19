@@ -101,9 +101,5 @@ export const HeaderBackground = styled.div`
 	height: 160px;
 	width: 100%;
 	z-index: -1;
-	background: linear-gradient(
-		90deg,
-		transparent,
-		${({ theme }) => theme.colors.backgroundSecondary}
-	);
+	background: linear-gradient(90deg, transparent, #d6d0e8);
 `;
